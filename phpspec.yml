@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: DMOVerse
+        psr4_prefix: DMOVerse
         src_path: app

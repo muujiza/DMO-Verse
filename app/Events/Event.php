@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace DMOVerse\Events;
 
 abstract class Event
 {
