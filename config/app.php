@@ -137,13 +137,22 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        Laravel\Socialite\SocialiteServiceProvider::class,
+        GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        AltThree\Emoji\EmojiServiceProvider::class,
+        Lanz\Commentable\CommentableServiceProvider::class,
+        Cmgmyr\Messenger\MessengerServiceProvider::class,
+        igaster\laravelTheme\themeServiceProvider::class,
+
+        Barryvdh\Debugbar\ServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        DMOVerse\Providers\AppServiceProvider::class,
+        DMOVerse\Providers\AuthServiceProvider::class,
+        DMOVerse\Providers\EventServiceProvider::class,
+        DMOVerse\Providers\RouteServiceProvider::class,
 
     ],
 
@@ -193,6 +202,10 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Markdown'  => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Theme'     => igaster\laravelTheme\Facades\Theme::class,
+        'Debugbar'  => Barryvdh\Debugbar\Facade::class,
 
     ],
 
