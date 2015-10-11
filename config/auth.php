@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'model' => App\Models\User\User::class,
+    'model' => DMOVerse\Models\Users\User::class,
 
     /*
     |--------------------------------------------------------------------------

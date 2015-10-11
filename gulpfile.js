@@ -18,7 +18,7 @@ elixir(function(mix) {
 	 /*
    	 | Compile less into verse.css
 	 */
-   	mix.less('verse.less', dir.resources.css);
+   	mix.less('verse.less', dir.resources.css+'/verse.css');
    	/*
      | Compile Stylesheets into comico.css
      */
@@ -100,7 +100,7 @@ elixir(function(mix) {
      */
     mix.scripts([   
     	'libs.js',                                          
-        ], dir.asset.js+'/comico.js', dir.resources.js
+        ], dir.asset.js+'/dmo-verse.js', dir.resources.js
     );
     	
     mix.browserSync({ 

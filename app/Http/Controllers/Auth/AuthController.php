@@ -2,9 +2,13 @@
 
 namespace DMOVerse\Http\Controllers\Auth;
 
-use DMOVerse\User;
+use Auth;
+use Socialite;
 use Validator;
+use DMOVerse\Models\Users\User;
+
 use DMOVerse\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -22,6 +26,12 @@ class AuthController extends Controller
     */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
+
+    /**
+     * Login using username
+     * @var string
+     */
+    protected $username = 'username';
 
     /**
      * Create a new authentication controller instance.
@@ -42,7 +52,7 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'username' => 'required|min:4|max:255|unique:users',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -57,9 +67,46 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
+            'username' => $data['username'],
             'email' => $data['email'],
+            'avatar' => $data['avatar'],
             'password' => bcrypt($data['password']),
         ]);
+    }
+
+    /**
+     * Redirect the user to the Facebook authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider()
+    {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from Facebook.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback()
+    {   
+        try {
+            $user = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return \Redirect::to('auth/facebook');
+        }
+
+        if ($authUser = User::where('email', $user->email)->first()) 
+        {
+            Auth::login($authUser, true);
+
+            return redirect('/');
+        } else {
+            return redirect()->route('register')->with([
+                'email' => $user->email,
+                'avatar' => $user->avatar
+                ]);
+        }
     }
 }

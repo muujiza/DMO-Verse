@@ -30,15 +30,15 @@ return [
     ],
 
     'stripe' => [
-        'model'  => DMOVerse\User::class,
+        'model'  => DMOVerse\Models\Users\User::class,
         'key'    => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
     'facebook' => [
-        'client_id' => env('FACEBOOK_ID'),
-        'client_secret' => env('FACEBOOK_SECRET'),
-        'redirect' => 'http://dmo-verse.comico.my/auth/facebook/callback',
+        'client_id' => env('FB_ID'),
+        'client_secret' => env('FB_SECRET'),
+        'redirect' => 'http://'.env('APP_DOMAIN').'/auth/facebook/callback',
     ],
 
 ];
