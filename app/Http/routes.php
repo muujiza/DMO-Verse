@@ -15,3 +15,9 @@ Route::group(['prefix' => 'auth'], function() {
 	Route::get('facebook', ['as' => 'loginFB', 'uses' => 'Auth\AuthController@redirectToProvider']);
 	Route::get('facebook/callback', 'Auth\AuthController@handleProviderCallback');
 });
+
+Route::group(['prefix' => 'items'], function() {
+	Route::get('/', ['as' => 'itemView', 'uses' => 'Items\ItemController@view']);
+	Route::get('add', ['as' => 'itemAdd', 'uses' => 'Items\ItemController@add']);
+	Route::post('/', ['as' => 'itemStore', 'uses' => 'Items\ItemController@store']);
+});

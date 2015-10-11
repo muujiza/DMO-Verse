@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCharactersTable extends Migration
+class CreateMarketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,13 @@ class CreateCharactersTable extends Migration
      */
     public function up()
     {
-        Schema::create('characters', function (Blueprint $table) {
+        Schema::create('market', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('name');
-            $table->integer('level')->unsigned();
-            $table->string('tamer_type');
-            $table->string('server');
-            $table->string('guild')->default('Stray');
-            $table->integer('main')->default(0);
+            $table->string('description');
+            $table->string('type');
+            $table->dateTime('time');
+            $table->integer('active');
             $table->timestamps();
         });
     }
@@ -32,6 +30,6 @@ class CreateCharactersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('characters');
+        Schema::drop('market');
     }
 }
