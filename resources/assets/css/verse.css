@@ -1940,9 +1940,9 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   box-sizing: border-box;
   text-decoration: none;
   /* 1 */
-  height: 41px;
+  height: 50px;
   padding: 0 15px;
-  line-height: 40px;
+  line-height: 50px;
   /* 2 */
   color: #444;
   font-size: 14px;
@@ -1996,10 +1996,10 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 /* Sub-objects: `uk-navbar-nav-subtitle`
  ========================================================================== */
 .uk-navbar-nav .uk-navbar-nav-subtitle {
-  line-height: 28px;
+  line-height: 38px;
 }
 .uk-navbar-nav-subtitle > div {
-  margin-top: -6px;
+  margin-top: -11px;
   font-size: 10px;
   line-height: 12px;
 }
@@ -2013,7 +2013,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-navbar-toggle {
   box-sizing: border-box;
   display: block;
-  height: 41px;
+  height: 50px;
   padding: 0 15px;
   float: left;
   margin-top: -1px;

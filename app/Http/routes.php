@@ -21,3 +21,9 @@ Route::group(['prefix' => 'items'], function() {
 	Route::get('add', ['as' => 'itemAdd', 'uses' => 'Items\ItemController@add']);
 	Route::post('/', ['as' => 'itemStore', 'uses' => 'Items\ItemController@store']);
 });
+
+Route::group(['prefix' => 'market'], function() {
+	Route::get('/', ['as' => 'marketView', 'uses' => 'Market\MarketController@view']);
+	Route::get('create', ['as' => 'marketCreate', 'uses' => 'Market\MarketController@create']);
+	Route::post('/', ['as' => 'marketMake', 'uses' => 'Market\MarketController@make']);
+});

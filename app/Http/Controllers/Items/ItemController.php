@@ -3,7 +3,6 @@
 namespace DMOVerse\Http\Controllers\Items;
 
 use Storage;
-use Session;
 use DMOVerse\Models\Items\Item;
 use DMOVerse\Http\Requests;
 use DMOVerse\Http\Controllers\Controller;
@@ -22,6 +21,7 @@ class ItemController extends Controller
         $items = Item::all();
         return view('items.list', compact('items'));
     }
+
     /**
      * Display the add new item form
      *

@@ -6,7 +6,7 @@
 
 @section('content')
 @if (count($errors) > 0)
-    <div class="uk-alert uk-alert-danger uk-text-center">
+    <div class="uk-alert uk-alert-danger uk-text-center uk-margin-top-remove">
         <strong>Warning!</strong> You got some errors
             @foreach ($errors->all() as $error)
                 | {{ $error }}
@@ -14,7 +14,7 @@
     </div>
 @endif
 @if (session('email'))
-    <div class="uk-alert uk-alert-primary uk-text-center">
+    <div class="uk-alert uk-alert-primary uk-text-center uk-margin-top-remove">
         <strong>Hello!</strong> Since this is the first time you are logging in using facebook, 
         please choose a username and password.
     </div>

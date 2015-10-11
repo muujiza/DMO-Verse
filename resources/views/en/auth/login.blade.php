@@ -6,7 +6,7 @@
 
 @section('content')
 @if (count($errors) > 0)
-    <div class="uk-alert uk-alert-danger uk-text-center">
+    <div class="uk-alert uk-alert-danger uk-text-center uk-margin-top-remove">
     <strong>Warning!</strong> You got some errors
         @foreach ($errors->all() as $error)
            | {{ $error }}
@@ -26,7 +26,7 @@
                 <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Username" name="username">
             </div>
             <div class="uk-form-row">
-                <input class="uk-width-1-1 uk-form-large" type="text" placeholder="Password" name="password">
+                <input class="uk-width-1-1 uk-form-large" type="password" placeholder="Password" name="password">
             </div>
             <div class="uk-form-row">
                 <button class="uk-width-1-1 uk-button uk-button-primary uk-button-large" type="submit">Login</button>

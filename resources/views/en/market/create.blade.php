@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('head')
-	<title>Add new item</title>
+	<title>Make a market</title>
 @endsection
 
 @section('content')
@@ -31,21 +31,11 @@
                 ></textarea>
             </div>
             <div class="uk-form-row">
-            	<select name="category" class="uk-form-large uk-width-1-1">
-            		<option value="">Category</option>
-            		<option>Accesories</option>
-            		<option>Attributes</option>
-            		<option>Chipsets</option>
-            		<option>Consumables</option>
-            		<option>DigiEggs (cash)</option>
-            		<option>DigiEggs (normal)</option>
-            		<option>Enhancements</option>
-            		<option>Evolutions</option>
-            		<option>Expansions</option>
-            		<option>Hatch Materials</option>
-            		<option>Scannables</option>
-            		<option>Tamer Exchange</option>
-            		<option>MISC</option>
+            	<select name="type" class="uk-form-large uk-width-1-1">
+            		<option value="">Type</option>
+            		<option>Sale</option>
+            		<option>Trade</option>
+            		<option>Bid</option>
             	</select>
             </div>
             <div class="uk-form-row">
