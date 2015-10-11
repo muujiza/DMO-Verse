@@ -20,7 +20,7 @@ class ItemController extends Controller
     public function view()
     {   
         $items = Item::all();
-        return $items;
+        return view('items.list', compact('items'));
     }
     /**
      * Display the add new item form
